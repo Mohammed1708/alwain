@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Description } from "@radix-ui/react-toast"
 import {
   Building2,
   Users,
@@ -17,6 +18,8 @@ import {
   Mail,
   MapPin,
   Instagram,
+  Icon,
+  Globe,
 } from "lucide-react"
 
 export default function Home() {
@@ -55,15 +58,10 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-foreground">About Us</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed text-base sm:text-lg">
                 <p>
-                  Elwain Europa is a trusted international manpower solutions company, delivering end-to-end workforce
-                  recruitment, training, and placement services across Europe and global markets. With a strong
-                  operational framework similar to leading manpower institutions, we support corporations, institutions,
-                  and government-linked entities in fulfilling workforce needs with qualified, compliant, and job-ready
-                  talent.
+                  Elwain Europa is a trusted international manpower solutions company, delivering end-to-end workforce recruitment, training, and placement services across Europe and global markets. With a strong operational framework similar to Binawan Group, Elwain Europa is designed to support corporations, institutions, and government-linked entities in fulfilling their workforce needs with qualified, job-ready, and compliant talent.
                 </p>
                 <p>
-                  We operate as a long-term strategic partner — not merely a recruitment vendor — ensuring workforce
-                  continuity, quality assurance, and regulatory compliance.
+                  We work as a long-term strategic partner, not merely a recruitment vendor, ensuring workforce continuity, quality assurance, and regulatory compliance at every stage.
                 </p>
               </div>
             </div>
@@ -118,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Sectors Section */}
+      {/* Our Sectors Section
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center text-foreground">Our Sectors</h2>
@@ -140,9 +138,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Ethical Recruitment Section */}
+      {/* Ethical Recruitment Section
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Commitment to Ethical Recruitment</h2>
@@ -152,7 +150,7 @@ export default function Home() {
             meet international standards.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Partner Section */}
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8">
@@ -163,30 +161,25 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
             {[
               {
-                icon: Briefcase,
-                title: "Business-Oriented Approach",
-                description: "Strategic partnership focused on your business objectives",
+                icon: Globe,
+                title: "International Recruitment & Placement",
+                description: "We source, screen, and deploy qualified professionals for overseas placement, aligned with client-specific requirements, industry standards, and host-country regulations.",
               },
               {
                 icon: TrendingUp,
-                title: "Quality-Driven Talent Supply",
-                description: "Rigorous screening and qualification processes",
+                title: "Workforce Training & Job Readiness",
+                description: "We ensure candidates are fully prepared before deployment, reducing onboarding time and operational risk for employers.",
               },
               {
                 icon: FileCheck,
-                title: "Risk Mitigation & Compliance",
-                description: "Full regulatory compliance across all markets",
+                title: "Regulatory & Compliance Management",
+                description: "Elwain Europa manages the complexity of cross-border employment, allowing clients to focus on their core business.",
               },
               {
-                icon: Target,
-                title: "Scalable & Reliable Operations",
-                description: "Flexible solutions that grow with your needs",
-              },
-              {
-                icon: Users,
-                title: "Long-Term Partnership Mindset",
-                description: "Building lasting relationships beyond transactions",
-              },
+                icon: Briefcase,
+                title: "Customized Manpower Solutions",
+                description: "We understand that every organization has unique workforce challenges. Our solutions are tailored, scalable, and aligned with client operational goals."
+              }
             ].map((item, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex-shrink-0">
@@ -204,25 +197,68 @@ export default function Home() {
 
       {/* Working Model Section */}
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center text-foreground">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16 sm:mb-20 text-center text-foreground">
             Our Working Model
           </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
-            {[
-              { step: "01", title: "Client Needs Assessment" },
-              { step: "02", title: "Talent Sourcing & Screening" },
-              { step: "03", title: "Training & Preparation" },
-              { step: "04", title: "Deployment & Placement" },
-              { step: "05", title: "Post-Placement Support" },
-            ].map((phase, index) => (
-              <div key={index} className="text-center">
-                <div className="mb-4">
-                  <span className="inline-block text-4xl sm:text-5xl font-bold text-primary">{phase.step}</span>
+
+          {/* Timeline Container */}
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+
+            {/* Timeline Items */}
+            <div className="space-y-12 sm:space-y-16">
+              {[
+                { step: "01", title: "Client Needs Assessment", description:"Understanding your manpower requirements, operational challenges, and timeline.", position: "right" },
+                { step: "02", title: "Talent Sourcing & Screening", description:"Recruitment, assessment, and selection based on agreed criteria.", position: "left" },
+                { step: "03", title: "Training & Preparation", description:"Ensuring candidates are fully job-ready and compliant.", position: "right" },
+                { step: "04", title: "Deployment & Placement", description:"Coordinated deployment aligned with client schedules.", position: "left" },
+                { step: "05", title: "Post-Placement Support", description:"Ongoing coordination to ensure workforce stability and performance.", position: "right" },
+              ].map((phase, index) => (
+                <div key={index} className="relative">
+                  {/* Center Square */}
+                  <div className="absolute left-1/2 top-0 w-4 h-4 bg-primary border-4 border-background -translate-x-1/2 rotate-45 z-10" />
+
+                  {/* Content */}
+                  <div
+                    className={`grid grid-cols-2 gap-8 sm:gap-12 items-start ${phase.position === "left" ? "" : ""}`}
+                  >
+                    {phase.position === "right" ? (
+                      <>
+                        {/* Empty Left Side */}
+                        <div />
+                        {/* Content Right Side */}
+                        <div className="pt-0">
+                          <div className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <span className="inline-block text-3xl sm:text-4xl font-bold text-primary mb-3">
+                              {phase.step}
+                            </span>
+                            <h3 className="text-lg sm:text-xl font-semibold text-foreground">{phase.title}</h3>
+                            <p className="text-muted-foreground mt-2">{phase.description}</p>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        {/* Content Left Side */}
+                        <div className="pt-0 text-right">
+                          <div className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <span className="inline-block text-3xl sm:text-4xl font-bold text-primary mb-3">
+                              {phase.step}
+                            </span>
+                            <h3 className="text-lg sm:text-xl font-semibold text-foreground">{phase.title}</h3>
+                            <p className="text-muted-foreground mt-2">{phase.description}</p>
+                          </div>
+                        </div>
+                        {/* Empty Right Side */}
+                        <div />
+                      </>
+                    )}
+                  </div>
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-foreground">{phase.title}</h3>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
