@@ -116,6 +116,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Industries We Serve Section */}
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center text-foreground">
+            Industries We Serve
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: Building2, label: "Private Corporations" },
+              { icon: HeartPulse, label: "Hospitals & Healthcare Providers" },
+              { icon: UtensilsCrossed, label: "Hospitality Groups & Hotel Chains" },
+              { icon: HardHat, label: "Manufacturing & Industrial Companies" },
+              { icon: HardHat, label: "Construction Firms & Contractors" },
+              { icon: Truck, label: "Logistics & Service Companies" },
+            ].map((industry, index) => (
+              <Card key={index} className="border-border hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 flex items-center gap-4">
+                  <industry.icon className="w-10 h-10 text-primary flex-shrink-0" />
+                  <p className="font-semibold text-foreground text-sm sm:text-base">{industry.label}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Our Sectors Section
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -162,23 +188,33 @@ export default function Home() {
             {[
               {
                 icon: Globe,
-                title: "International Recruitment & Placement",
-                description: "We source, screen, and deploy qualified professionals for overseas placement, aligned with client-specific requirements, industry standards, and host-country regulations.",
+                title: "Business-Oriented Approach",
+                description: "We speak the language of business. Our recruitment model is designed to support productivity, workforce stability, and long-term performance.",
               },
               {
                 icon: TrendingUp,
-                title: "Workforce Training & Job Readiness",
-                description: "We ensure candidates are fully prepared before deployment, reducing onboarding time and operational risk for employers.",
+                title: "Quality-Driven Talent Supply",
+                description: "Candidates are selected through a structured screening and assessment process to ensure skill alignment and job readiness.",
               },
               {
                 icon: FileCheck,
-                title: "Regulatory & Compliance Management",
-                description: "Elwain Europa manages the complexity of cross-border employment, allowing clients to focus on their core business.",
+                title: "Risk Mitigation & Compliance",
+                description: "We minimize legal, operational, and reputational risks by prioritizing compliance, transparency, and ethical recruitment practices.",
               },
               {
                 icon: Briefcase,
-                title: "Customized Manpower Solutions",
-                description: "We understand that every organization has unique workforce challenges. Our solutions are tailored, scalable, and aligned with client operational goals."
+                title: "Scalable & Reliable Operations",
+                description: "Whether you require a small team or large workforce deployment, Elwain Europa has the operational capability to scale efficiently."
+              },
+              {
+                icon: Briefcase,
+                title: "Long-Term Partnership Mindset",
+                description: "Our success is measured by the success of our clients. We aim to build sustainable partnerships, not transactional engagements."
+              },
+              {
+                icon: Briefcase,
+                title: "Commitment to Ethical Recruitment",
+                description: "We prioritize transparency, fair processes, and respect for both clients and candidates. "
               }
             ].map((item, index) => (
               <div key={index} className="flex gap-4">
@@ -263,31 +299,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Industries We Serve Section */}
-      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center text-foreground">
-            Industries We Serve
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: Building2, label: "Private Corporations" },
-              { icon: HeartPulse, label: "Hospitals & Healthcare Providers" },
-              { icon: UtensilsCrossed, label: "Hospitality Groups & Hotel Chains" },
-              { icon: HardHat, label: "Manufacturing & Industrial Companies" },
-              { icon: HardHat, label: "Construction Firms & Contractors" },
-              { icon: Truck, label: "Logistics & Service Companies" },
-            ].map((industry, index) => (
-              <Card key={index} className="border-border hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 flex items-center gap-4">
-                  <industry.icon className="w-10 h-10 text-primary flex-shrink-0" />
-                  <p className="font-semibold text-foreground text-sm sm:text-base">{industry.label}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white">
